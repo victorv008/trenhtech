@@ -1,0 +1,36 @@
+<section class="contact" id="kontakt">
+  <div class="contact__inner">
+    <div class="contact__form-col">
+      <h2 class="contact__headline">{{ contact.headline }}</h2>
+      <p class="contact__description">{{ contact.description }}</p>
+
+      <form class="contact__form">
+        @for (field of contact.fields; track field.name) {
+          <div class="contact__field">
+            <label class="contact__label" [attr.for]="field.name">{{ field.label }}</label>
+            @if (field.type === 'textarea') {
+              <textarea
+                class="contact__textarea"
+                [id]="field.name"
+                [name]="field.name"
+              ></textarea>
+            } @else {
+              <input
+                class="contact__input"
+                [type]="field.type"
+                [id]="field.name"
+                [name]="field.name"
+              />
+            }
+          </div>
+        }
+
+        <button class="contact__submit" type="submit">{{ contact.submitLabel }}</button>
+      </form>
+    </div>
+
+    <div class="contact__image-col">
+      <div class="contact__image-placeholder"></div>
+    </div>
+  </div>
+</section>

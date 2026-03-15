@@ -1,0 +1,22 @@
+<section class="about" id="tjanster">
+  <div class="about__inner">
+    <div class="about__content">
+      <p class="about__text">{{ about.text }}</p>
+      <div class="about__buttons">
+        @for (btn of about.buttons; track btn.label) {
+          <a
+            class="about__btn"
+            [class.about__btn--outline]="btn.variant === 'outline'"
+            [class.about__btn--filled]="btn.variant === 'filled'"
+            [href]="btn.href"
+          >
+            {{ btn.label }}
+          </a>
+        }
+      </div>
+    </div>
+    <div class="about__image">
+      <div class="about__image-placeholder"></div>
+    </div>
+  </div>
+</section>

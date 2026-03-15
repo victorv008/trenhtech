@@ -1,0 +1,17 @@
+.motto {
+  background: linear-gradient(135deg, var(--nordic-sky) 0%, var(--steel-cloud) 40%, var(--deep-tech) 100%);
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 64px;
+    text-align: center;
+  }
+
+  &__text {
+    font-family: var(--font-title);
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--dark-mode);
+  }
+}

@@ -1,20 +1,26 @@
-# Project Constitution (Trenh Tech AB)
+# Project Constitution — Trenh Tech AB
 
-## 1. Målsättning (North Star)
-Att skapa en modern, professionell och stilren landningssida för det nystartade IT-konsultbolaget Trenh Tech AB. Sidan ska utstråla kompetens och modernitet, inspirerad av världens och Sveriges främsta techkonsultbolag.
+## 1. North Star
+Pixel-perfekt landing page för Trenh Tech AB (IT-konsultbolag, Varberg).
+Exakt kopia av Figma-designen i `Landing page/Frame 76.png`.
 
-## 2. Arkitektoniska Invarianter
-- **Frontend-Techstack:** HTML, CSS (Vanilla eller CSS-variabler för temahantering), JavaScript (ES6+).
-- **Hosting:** GitHub Pages eller lokal server för utveckling/granskning, i väntan på produktionsmiljö.
-- **Responsivitet:** Mobile-first approach. Sidan måste se perfekt ut på alla skärmstorlekar.
+## 2. Architectural Invariants
+- **Tech Stack:** Angular 19+ med TypeScript och SCSS
+- **Content Source:** All text från `gemini.md` JSON-schema → `content.json`
+- **Fonts:** Helvetica (body/logo) + Almarena (titlar)
+- **Colors:** #DFE9ED, #A0B4BC, #65828D, #233A4A, #1F2429
+- **No APIs:** Ren statisk sida, inga backend-anrop
 
-## 3. Beteenderegler (Behavioral Rules)
-- **Tonläge:** Professionellt, förtroendeingivande, innovativt och tydligt.
-- **Designspråk:** Rent, "minimalistiskt men kraftfullt" (ample whitespace, tydlig typografi, subtila och moderna animationer).
-- **Data-First:** Inga ändringar i logik görs innan `gemini.md` har uppdaterats vid behov.
+## 3. Behavioral Rules
+- Designen är lag — pixelperfekt matchning med Figma
+- gemini.md är Source of Truth för all textdata
+- Inga ändringar i content utan att uppdatera gemini.md först
+- Platshållarbilder används tills riktiga foton levereras
 
-## 4. Datakällor (Source of Truth)
-- All statisk data (tjänster, företagsinfo) ligger i `gemini.md` och kommer att implementeras i sidans struktur (ev. via JSON/JS).
-
-## 5. Leverans (Delivery Payload)
-Ett fullt fungerande GitHub-repository med all kod, granskad via en lokal utvecklingsserver innan eventuell publicering.
+## 4. File References
+- `gemini.md` — Data schema (The Law)
+- `task_plan.md` — Phases & checklists
+- `findings.md` — Research & constraints
+- `progress.md` — Work log
+- `Design/extracted/` — Alla design-assets från Figma
+- `Landing page/Frame 76.png` — Referensbild (facit)

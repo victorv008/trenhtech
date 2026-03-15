@@ -1,0 +1,55 @@
+// === Design Tokens (from gemini.md) ===
+:root {
+  --soft-cloud: #DFE9ED;
+  --nordic-sky: #A0B4BC;
+  --steel-cloud: #65828D;
+  --deep-tech: #233A4A;
+  --dark-mode: #1F2429;
+
+  --font-title: 'Almarena', 'Outfit', 'Helvetica Neue', sans-serif;
+  --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+// === Reset ===
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--dark-mode);
+  color: var(--soft-cloud);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, textarea {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: none;
+  color: inherit;
+}

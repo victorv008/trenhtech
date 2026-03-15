@@ -1,0 +1,17 @@
+<section class="newsletter" id="nyhetsbrev">
+  <div class="newsletter__inner">
+    <h3 class="newsletter__title">{{ newsletter.title }}</h3>
+    <p class="newsletter__subtitle">{{ newsletter.subtitle }}</p>
+
+    <div class="newsletter__grid">
+      @for (card of newsletter.cards; track card.title; let i = $index) {
+        <div class="newsletter__card" [class.newsletter__card--tall]="i === 1">
+          <div class="newsletter__card-image"></div>
+          @if (card.title) {
+            <p class="newsletter__card-title">{{ card.title }}</p>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>
