@@ -1,0 +1,28 @@
+<section class="contact section" id="kontakt">
+  <div class="contact-inner">
+    <div class="contact-form-side">
+      <h2 class="contact-headline">Redo att ta nästa steg?</h2>
+      <p class="contact-description">
+        Kontakta oss så diskuterar vi hur vi kan hjälpa dig att förverkliga din vision. Vi återkommer inom 48h.
+      </p>
+      <form class="contact-form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Namn</label>
+          <input type="text" id="name" name="name" placeholder="Namn">
+        </div>
+        <div class="form-group">
+          <label for="email">Mail</label>
+          <input type="email" id="email" name="email" placeholder="Mail">
+        </div>
+        <div class="form-group">
+          <label for="message">Meddelande</label>
+          <textarea id="message" name="message" placeholder="Meddelande" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-cta submit-btn">Skicka</button>
+      </form>
+    </div>
+    <div class="contact-image-side">
+      <img src="assets/images/contact-image.png" alt="Laptop" loading="lazy">
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+.cta-banner {
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, #3f5a6b 0%, var(--dark-mode) 70%);
+  text-align: center;
+  padding: 120px 24px 140px;
+}
+
+.cta-banner-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cta-banner-text {
+  font-family: var(--font-title);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--soft-cloud);
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+  .cta-banner {
+    padding: 64px 24px;
+  }
+
+  .cta-banner-text {
+    font-size: 2rem;
+  }
+}

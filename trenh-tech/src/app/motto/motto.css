@@ -1,0 +1,30 @@
+.motto {
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, #3f5a6b 0%, var(--dark-mode) 70%);
+  text-align: center;
+  padding: 140px 24px 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.motto-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.motto-text {
+  font-family: var(--font-title);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--soft-cloud);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .motto {
+    padding: 64px 24px 48px;
+  }
+
+  .motto-text {
+    font-size: 2rem;
+  }
+}
