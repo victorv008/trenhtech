@@ -1,21 +1,28 @@
 <section class="newsletter section" id="nyhetsbrev">
   <div class="newsletter-inner">
-    <div class="newsletter-header" appScrollAnimate>
+    <div class="newsletter-header" [appScrollAnimate]="'scroll-visible'">
       <h2 class="newsletter-title">Nyhetsbrev</h2>
       <p class="newsletter-subtitle">Häng med i det senaste inom tech-världen</p>
     </div>
-    <div class="newsletter-cards">
-      <div class="card" [appScrollAnimate]="'scroll-zoom'" animationDelay="100ms">
-        <div class="card-image">
-          <img src="assets/images/newsletter-1.png" alt="Kommer AI att ta över?" loading="lazy">
-        </div>
-        <h3 class="card-title">Kommer AI att ta över?</h3>
+
+    <!-- Scroll track wrapper -->
+    <div class="newsletter-scroll-wrapper">
+      <div class="newsletter-cards-track" #cardsTrack>
+        @for (article of articles; track article.title) {
+          <div class="card">
+            <div class="card-image">
+              <img [src]="article.image" [alt]="article.alt" loading="lazy">
+            </div>
+            <h3 class="card-title">{{ article.title }}</h3>
+          </div>
+        }
       </div>
-      <div class="card" [appScrollAnimate]="'scroll-zoom'" animationDelay="300ms">
-        <div class="card-image">
-          <img src="assets/images/newsletter-2.png" alt="När teknik blir affär" loading="lazy">
-        </div>
-        <h3 class="card-title">När teknik blir affär</h3>
+
+      <!-- Scroll indicators (desktop) -->
+      <div class="scroll-hint">
+        <span class="scroll-hint-dot"></span>
+        <span class="scroll-hint-text">Scrolla för fler artiklar</span>
+        <span class="scroll-hint-arrow">→</span>
       </div>
     </div>
   </div>

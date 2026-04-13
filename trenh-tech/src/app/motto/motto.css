@@ -1,5 +1,5 @@
 .motto {
-  background: radial-gradient(ellipse 100% 100% at 50% 50%, #3f5a6b 0%, var(--dark-mode) 70%);
+  background: linear-gradient(to bottom, var(--dark-mode) 0%, var(--nordic-sky) 100%);
   text-align: center;
   padding: 140px 24px 100px;
   position: relative;

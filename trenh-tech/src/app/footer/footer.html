@@ -1,12 +1,12 @@
 <footer class="footer section">
   <div class="footer-inner">
-    <div class="footer-logo" appScrollAnimate animationDelay="0ms">
+    <div class="footer-logo" [appScrollAnimate]="'scroll-fade-up'" animationDelay="0ms">
       <a href="#" class="logo">
         <img src="assets/images/logo-icon.png" alt="Trenh Tech" class="logo-icon">
         <span class="logo-text">TRENH<br>TECH</span>
       </a>
     </div>
-    <div class="footer-links" appScrollAnimate animationDelay="100ms">
+    <div class="footer-links" [appScrollAnimate]="'scroll-fade-up'" animationDelay="100ms">
       <h4 class="footer-links-title">Våra tjänster</h4>
       <ul>
         <li><a href="#nyhetsbrev">Nyhetsbrev</a></li>
@@ -14,14 +14,14 @@
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </div>
-    <div class="footer-contact" appScrollAnimate animationDelay="200ms">
+    <div class="footer-contact" [appScrollAnimate]="'scroll-fade-up'" animationDelay="200ms">
+      <div class="footer-info">
+        <p><i class="far fa-envelope"></i> stefan&#64;trenhtech.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Varberg</p>
+      </div>
       <div class="footer-social">
         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-      <div class="footer-info">
-        <p>✉ stefan&#64;trenhtech.com</p>
-        <p>📍 Varberg</p>
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 .newsletter {
-  background: var(--dark-mode);
+  background: var(--nordic-sky);
+  overflow: hidden;
 }
 
 .newsletter-inner {
@@ -7,6 +8,7 @@
   margin: 0 auto;
 }
 
+/* ===== Header ===== */
 .newsletter-header {
   margin-bottom: 40px;
 }
@@ -15,31 +17,73 @@
   font-family: var(--font-title);
   font-size: 1.6rem;
   font-weight: 400;
-  color: var(--soft-cloud);
+  color: var(--dark-mode);
   margin-bottom: 8px;
 }
 
 .newsletter-subtitle {
   font-size: 0.95rem;
-  color: var(--nordic-sky);
+  color: var(--dark-mode);
   font-weight: 300;
+  opacity: 0.8;
 }
 
-.newsletter-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
+/* ===== Scroll Wrapper ===== */
+.newsletter-scroll-wrapper {
+  position: relative;
 }
 
+/* ===== Cards Track — horizontal scroll on all screen sizes ===== */
+.newsletter-cards-track {
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 20px;
+  /* Hide scrollbar on all browsers */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.newsletter-cards-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== Card ===== */
 .card {
+  flex: 0 0 calc(50% - 14px); /* Show 2 cards at a time on desktop */
+  scroll-snap-align: start;
   cursor: pointer;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Pop-in / Pop-out animation states */
+.card-hidden-right {
+  opacity: 0;
+  transform: scale(0.88) translateX(40px);
+}
+
+.card-hidden-left {
+  opacity: 0;
+  transform: scale(0.88) translateX(-40px);
+}
+
+.card-visible {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+}
+
+/* Hover lift */
 .card:hover {
-  transform: translateY(-6px);
+  transform: scale(1.02) translateY(-5px);
 }
 
+/* ===== Card Image ===== */
 .card-image {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -47,24 +91,24 @@
   overflow: hidden;
   margin-bottom: 16px;
   position: relative;
+  background: var(--deep-tech);
 }
 
-/* Shine sweep effect on hover */
+/* Shine sweep on hover */
 .card-image::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 50%;
-  height: 100%;
+  inset: 0;
+  left: -110%;
+  width: 60%;
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.07),
     transparent
   );
-  transition: none;
   pointer-events: none;
+  transition: none;
 }
 
 .card:hover .card-image::after {
@@ -72,12 +116,8 @@
 }
 
 @keyframes cardShineSweep {
-  from {
-    left: -100%;
-  }
-  to {
-    left: 200%;
-  }
+  from { left: -110%; }
+  to   { left: 150%; }
 }
 
 .card-image img {
@@ -88,9 +128,10 @@
 }
 
 .card:hover .card-image img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
+/* ===== Card Title ===== */
 .card-title {
   font-family: var(--font-title);
   font-size: 1rem;
@@ -103,8 +144,56 @@
   color: #fff;
 }
 
+/* ===== Scroll Hint ===== */
+.scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  opacity: 0.5;
+  font-size: 0.8rem;
+  color: var(--dark-mode);
+  animation: scrollHintPulse 2.5s ease-in-out infinite;
+}
+
+.scroll-hint-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--dark-mode);
+  flex-shrink: 0;
+}
+
+.scroll-hint-arrow {
+  animation: scrollHintArrow 1.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes scrollHintPulse {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 0.8; }
+}
+
+@keyframes scrollHintArrow {
+  0%, 100% { transform: translateX(0); }
+  50%       { transform: translateX(5px); }
+}
+
+/* ===== Mobile — swipe horizontal, 1 card at a time ===== */
 @media (max-width: 768px) {
-  .newsletter-cards {
-    grid-template-columns: 1fr;
+  .newsletter-inner {
+    padding-right: 0; /* let cards bleed to the edge */
+  }
+
+  .card {
+    flex: 0 0 80vw; /* dominant single card + peek at next */
+    max-width: 320px;
+  }
+}
+
+/* ===== Large desktop — show 2.3 cards ===== */
+@media (min-width: 1024px) {
+  .card {
+    flex: 0 0 calc(45% - 14px);
   }
 }
