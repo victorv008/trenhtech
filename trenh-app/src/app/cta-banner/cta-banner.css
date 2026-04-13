@@ -1,0 +1,35 @@
+.cta-banner {
+  background: linear-gradient(
+    180deg,
+    #A0B4BC 0%,
+    #607682 25%,
+    #425866 50%,
+    #233A4A 75%,
+    #1F2429 100%
+  );
+  text-align: center;
+  padding: 120px 24px 140px;
+}
+
+.cta-banner-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cta-banner-text {
+  font-family: var(--font-title);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--soft-cloud);
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+  .cta-banner {
+    padding: 64px 24px;
+  }
+
+  .cta-banner-text {
+    font-size: 2rem;
+  }
+}

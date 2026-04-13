@@ -1,0 +1,35 @@
+.motto {
+  background: linear-gradient(
+    180deg,
+    #1F2429 0%,
+    #233A4A 25%,
+    #425866 50%,
+    #607682 75%,
+    #A0B4BC 100%
+  );
+  text-align: center;
+  padding: 140px 24px 100px;
+}
+
+.motto-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.motto-text {
+  font-family: var(--font-title);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--soft-cloud);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .motto {
+    padding: 64px 24px 48px;
+  }
+
+  .motto-text {
+    font-size: 2rem;
+  }
+}

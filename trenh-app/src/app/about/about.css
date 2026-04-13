@@ -1,0 +1,67 @@
+.about {
+  background: #1F2429;
+  position: relative;
+}
+
+.about-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--soft-cloud);
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.about-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.about-buttons .btn {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-buttons .btn:hover {
+  transform: translateY(-2px);
+}
+
+.about-buttons .btn-outline:hover {
+  background: rgba(160, 180, 188, 0.12);
+  box-shadow: 0 4px 20px rgba(160, 180, 188, 0.1);
+}
+
+.about-buttons .btn-filled:hover {
+  background: #2c4a5e;
+  box-shadow: 0 4px 20px rgba(35, 58, 74, 0.3);
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-image {
+    order: -1;
+  }
+}
