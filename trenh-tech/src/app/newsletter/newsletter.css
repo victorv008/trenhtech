@@ -33,6 +33,11 @@
 
 .card {
   cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover {
+  transform: translateY(-6px);
 }
 
 .card-image {
@@ -41,17 +46,49 @@
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 16px;
+  position: relative;
+}
+
+/* Shine sweep effect on hover */
+.card-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.06),
+    transparent
+  );
+  transition: none;
+  pointer-events: none;
+}
+
+.card:hover .card-image::after {
+  animation: cardShineSweep 0.7s ease forwards;
+}
+
+@keyframes cardShineSweep {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 200%;
+  }
 }
 
 .card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card:hover .card-image img {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 .card-title {
@@ -59,6 +96,11 @@
   font-size: 1rem;
   font-weight: 400;
   color: var(--soft-cloud);
+  transition: color 0.3s ease;
+}
+
+.card:hover .card-title {
+  color: #fff;
 }
 
 @media (max-width: 768px) {

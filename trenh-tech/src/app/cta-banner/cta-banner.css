@@ -2,11 +2,40 @@
   background: radial-gradient(ellipse 100% 100% at 50% 50%, #3f5a6b 0%, var(--dark-mode) 70%);
   text-align: center;
   padding: 120px 24px 140px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient glow like motto */
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse, rgba(160, 180, 188, 0.06) 0%, transparent 70%);
+  animation: ctaGlowPulse 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes ctaGlowPulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
 }
 
 .cta-banner-inner {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .cta-banner-text {

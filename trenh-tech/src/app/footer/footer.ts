@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { ScrollAnimateDirective } from '../scroll-animate.directive';
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+  imports: [ScrollAnimateDirective],
   templateUrl: './footer.html',
   styleUrl: './footer.css',
 })

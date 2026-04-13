@@ -7,12 +7,23 @@
   justify-content: center;
   background: url('/assets/images/hero-bg.jpg') center top / cover no-repeat;
   margin-top: 72px;
+  overflow: hidden;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(31, 36, 41, 0.3) 0%, rgba(31, 36, 41, 0.6) 100%);
+  animation: heroOverlayFade 1.5s ease forwards;
+}
+
+@keyframes heroOverlayFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .hero-content {

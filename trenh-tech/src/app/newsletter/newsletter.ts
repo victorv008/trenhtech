@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { ScrollAnimateDirective } from '../scroll-animate.directive';
 
 @Component({
   selector: 'app-newsletter',
-  imports: [],
+  imports: [ScrollAnimateDirective],
   templateUrl: './newsletter.html',
   styleUrl: './newsletter.css',
 })

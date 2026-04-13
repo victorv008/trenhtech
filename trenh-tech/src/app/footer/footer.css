@@ -18,6 +18,11 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.03);
 }
 
 .logo-icon {
@@ -49,11 +54,13 @@
 .footer-links ul li a {
   font-size: 0.85rem;
   color: var(--nordic-sky);
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  display: inline-block;
 }
 
 .footer-links ul li a:hover {
   color: var(--soft-cloud);
+  padding-left: 4px;
 }
 
 .footer-contact {
@@ -70,11 +77,13 @@
 .footer-social a {
   font-size: 1.2rem;
   color: var(--soft-cloud);
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
 }
 
 .footer-social a:hover {
   color: var(--nordic-sky);
+  transform: translateY(-3px);
 }
 
 .footer-info p {

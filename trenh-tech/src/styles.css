@@ -112,3 +112,157 @@ button, input, textarea {
     padding: var(--section-padding-mobile);
   }
 }
+
+/* ===== Scroll Animation System ===== */
+
+/* Hidden state — before element enters viewport */
+.scroll-hidden {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+/* Visible state — default fade up */
+.scroll-visible {
+  animation: scrollFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--anim-delay, 0ms);
+}
+
+/* Variant: fade from left */
+.scroll-fade-left {
+  animation: scrollFadeLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--anim-delay, 0ms);
+}
+
+/* Variant: fade from right */
+.scroll-fade-right {
+  animation: scrollFadeRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--anim-delay, 0ms);
+}
+
+/* Variant: scale up */
+.scroll-scale-up {
+  animation: scrollScaleUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--anim-delay, 0ms);
+}
+
+/* Variant: gentle zoom */
+.scroll-zoom {
+  animation: scrollZoom 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--anim-delay, 0ms);
+}
+
+/* Variant: blur reveal */
+.scroll-blur-reveal {
+  animation: scrollBlurReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--anim-delay, 0ms);
+}
+
+/* Variant: text split reveal */
+.scroll-text-reveal {
+  animation: scrollTextReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--anim-delay, 0ms);
+}
+
+/* ===== Keyframes ===== */
+@keyframes scrollFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollFadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scrollFadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scrollScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scrollZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes scrollBlurReveal {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollTextReveal {
+  from {
+    opacity: 0;
+    letter-spacing: 0.2em;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 0.02em;
+    filter: blur(0);
+  }
+}
+
+/* ===== Respect reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hidden {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .scroll-visible,
+  .scroll-fade-left,
+  .scroll-fade-right,
+  .scroll-scale-up,
+  .scroll-zoom,
+  .scroll-blur-reveal,
+  .scroll-text-reveal {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}

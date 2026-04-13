@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { ScrollAnimateDirective } from '../scroll-animate.directive';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [ScrollAnimateDirective],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })
